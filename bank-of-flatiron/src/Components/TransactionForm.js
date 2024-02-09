@@ -1,35 +1,73 @@
-import React, {useState} from "react";
+import React from "react";
+import { useState } from "react";
 
-function TransactionForm({date, description, category, amount}){
-    const [transactionData, setTransactionData]=useState({
-        date:'', description:'', category:'', amount:''});    
+function TransactionForm({ onAddTransaction }) {
+  const [transactionData, setTransactionData] = useState({
+    date: "",
+    description: "",
+    category: "",
+    amount: "",
+  });
 
-    function handleChange(event){
-        const name=event.target.name;
-        let value=event.target.value;
-        setTransactionData({...transactionData, [name]:value})
-    }
+  const handleChange=(event)=>{
+    const {name, value} = event.target;
+    setTransactionData({ ...transactionData, [name]: value });
+  }
 
-    function handleSubmit(event){
-        event.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
+    onAddTransaction(transactionData);
+    setTransactionData({
+      date: "",
+      description: "",
+      category: "",
+      amount: "",
+    });
+  }
 
-    }
-    return(
-      <form onSubmit={handleSubmit}>
-        <label>
-            Date: <input type="date" value={date} name="date" onChange={handleChange}/>
-        </label> 
-        <label>
-            Description: <input type="text" name="description" value={description} onChange={handleChange}/>
-        </label>
-        <label>
-            Category: <input type="text" name="category" value={category} onChange={handleChange}/>
-        </label>
-        <label>
-            Amount <input type="number" name="amount" value={amount} onChange={handleChange}/>
-        </label>
-        <button type="submit">Add New Transaction</button>
-      </form>  
-    );
+  return (
+    <div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Date:{" "}
+        <input
+          type="date"
+          value={transactionData.date}
+          name="date"
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Description:{" "}
+        <input
+          type="text"
+          name="description"
+          value={transactionData.description}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Category:{" "}
+        <input
+          type="text"
+          name="category"
+          value={transactionData.category}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Amount{" "}
+        <input
+          type="number"
+          name="amount"
+          value={transactionData.amount}
+          onChange={handleChange}
+        />
+      </label>
+      <button type="submit">Add New Transaction</button>
+    </form>
+    </div>
+  );
 }
+
 export default TransactionForm;

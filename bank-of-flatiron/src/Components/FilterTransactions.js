@@ -1,11 +1,20 @@
 import React from "react";
+import { useState } from "react";
 
-function FilterTransactions(){
-        function onSearch(event){
-        onSearch(event.target.value);
-    }
+function FilterTransactions({onSearch}){
+const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch= (event) => {
+        const value = event.target.value;
+        setSearchTerm(value);
+        onSearch(searchTerm);
+}
+        
     return(
-            <input type="text" placeholder="Search..." onChange={onSearch}/>
+        <div>
+         <label type="search">Search:</label>
+            <input type="text" id="searchTerm" value={searchTerm} placeholder="Search..." onChange={handleSearch}/>
+        </div>
     )
 }
 export default FilterTransactions;
