@@ -9,5 +9,5 @@ This project is a React application that allows users to view a table of bank tr
 
 *Filter transactions by typing into the search bar.
 
-#Author
+# Author
 Efjeniah Saru Mwawughanga
