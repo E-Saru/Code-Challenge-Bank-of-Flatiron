@@ -6,27 +6,28 @@ function TransactionTable({ transactions ,onDelete }) {
     onDelete(id)
 }
   return (
-    <div className='container'>
-    <table class="table table-bordered">
-      <thead>
+    <div className='d-flex justify-content-center'>
+    <table className="border bg-info text-dark bg-opacity-75">
+      <thead className='table-light bg-info'>
         <tr>
-          <th>ID</th>
-          <th>Date</th>
-          <th>Description</th>
-          <th>Category</th>
-          <th>Amount</th>
+          <th className='border border-info p-2'>ID</th>
+          <th className='border border-info p-2'> Date</th>
+          <th className='border border-info p-2'>Description</th>
+          <th className='border border-info p-2'>Category</th>
+          <th className='border border-info p-2'>Amount</th>
+          <th className='border border-info p-2'>Clear</th>
         </tr>
       </thead>
       <tbody>
         {transactions.map((transaction) => (
-          <tr key={transaction.id}>
-            <td>{transaction.id}</td>
-            <td>{transaction.date}</td>
-            <td>{transaction.description}</td>
-            <td>{transaction.category}</td>
-            <td>{transaction.amount}</td>
-            <td>
-              <button onClick={() => handleDelete(transaction.id)} className="btn btn-danger" >Delete</button>
+          <tr key={transaction.id}  className='border border-info p-2 m-5 border-opacity-75'>
+            <td  className='border border-info p-2 border-opacity-75'>{transaction.id}</td>
+            <td  className='border border-info px-4 border-opacity-75'>{transaction.date}</td>
+            <td  className='border border-info px-5 border-opacity-75'>{transaction.description}</td>
+            <td  className='border border-info px-3 border-opacity-75'>{transaction.category}</td>
+            <td  className='border border-info p-2 border-opacity-75'>{transaction.amount}</td>
+            <td  className='border border-info p-2 border-opacity-75'>
+              <button onClick={() => handleDelete(transaction.id)} className="btn btn-danger" >X</button>
               </td>
           </tr>
         ))}

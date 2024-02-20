@@ -11,7 +11,7 @@ const [searchTerm, setSearchTerm] = useState('');
 }
         
     return(
-        <div>
+        <div className="my-5">
          <label type="search">Search:</label>
             <input type="text" id="searchTerm" value={searchTerm} placeholder="Search..." onChange={handleSearch}/>
         </div>

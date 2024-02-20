@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TransactionTable from './TransactionTable';
 import TransactionForm from './TransactionForm';
 import FilterTransactions from './FilterTransactions';
+import SortBar from './Sort';
 import '../../src/App.css';
 
 const App = () => {
@@ -94,25 +95,16 @@ const App = () => {
  }
  
    return (
+    <div className='bg-image'>
      <div className="App">
-       
-           <h2>Bank Of FlatIron</h2>
-           <FilterTransactions onSearch={handleSearch} />
-           <br></br>
-           <button style={{
-             margin: 10
-           }} className='btn btn-primary' onClick={() => handleSort(null)}>Clear Sort</button>
-           <button  style={{
-             margin: 10
-           }} className='btn btn-primary' onClick={() => handleSort('category')}>Sort by Category</button>
-           <button  style={{
-             margin: 10
-           }} className='btn btn-primary' onClick={() => handleSort('description')}>Sort by Description</button>
-           <button  style={{
-            margin: 10
-          }} className='btn btn-info' onClick={() => setDisplayAddForm(!displayAddForm)}>Add New Transaction</button>
-          {displayAddForm ? <TransactionForm onAddTransaction={addTransaction} displayForm={setDisplayAddForm}/>: null}
-           <TransactionTable transactions={filteredTransactions} onDelete={handleDelete}  />
+       <h2 className='text-bg-info'>Bank Of FlatIron</h2>
+        <FilterTransactions onSearch={handleSearch} />
+        
+         <button  style={{margin: 10}} className='btn btn-info' onClick={() => setDisplayAddForm(!displayAddForm)}>Add New Transaction</button>
+        {displayAddForm ? <TransactionForm onAddTransaction={addTransaction} displayForm={setDisplayAddForm}/>: null}
+        <SortBar handleSort={handleSort} />
+        <TransactionTable transactions={filteredTransactions} onDelete={handleDelete}  />
+     </div>
      </div>
    );
 

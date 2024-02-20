@@ -26,7 +26,7 @@ function TransactionForm({ onAddTransaction}) {
   };
 
   return (
-    <div className="my-5">
+    <div className="text-bg-info bg-opacity-50 my-3 py-5">
     <form onSubmit={handleSubmit}>
       <label className="px-2">
         Date:{" "}
@@ -70,7 +70,7 @@ function TransactionForm({ onAddTransaction}) {
           required
         />
       </label> <br/>
-      <button type="submit" className="mt-3 fs-6 badge text-bg-info">Add Transaction</button>
+      <button type="submit" className="mt-3 fs-6 badge text-bg-info bg-opacity-75">Add Transaction</button>
     </form>
     </div>
   );
