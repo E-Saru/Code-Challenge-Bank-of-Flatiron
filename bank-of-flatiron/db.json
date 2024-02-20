@@ -1,13 +1,6 @@
 {
   "transactions": [
     {
-      "id": "1",
-      "date": "2019-12-01",
-      "description": "Paycheck from Bob's Burgers",
-      "category": "Income",
-      "amount": 1000
-    },
-    {
       "id": "2",
       "date": "2019-12-01",
       "description": "South by Southwest Quinoa Bowl at Fresh & Co",
@@ -106,11 +99,46 @@
       "amount": "500"
     },
     {
-      "id": "3bd7",
-      "date": "2024-02-06",
-      "description": "Smocha",
+      "id": "2132",
+      "date": "2024-01-28",
+      "description": "Madaraka",
+      "category": "Transportation",
+      "amount": "1500"
+    },
+    {
+      "id": "4b8a",
+      "date": "2024-01-28",
+      "description": "Madaraka",
+      "category": "Transportation",
+      "amount": "1500"
+    },
+    {
+      "id": "55f9",
+      "date": "2024-01-30",
+      "description": "Matatu",
+      "category": "Transportation",
+      "amount": "300"
+    },
+    {
+      "id": "b43f",
+      "date": "",
+      "description": "Saltburn",
       "category": "Food",
-      "amount": "65"
+      "amount": "780"
+    },
+    {
+      "id": "4fb9",
+      "date": "",
+      "description": "Madaraka",
+      "category": "Food",
+      "amount": "520"
+    },
+    {
+      "id": "f811",
+      "date": "",
+      "description": "Madaraka",
+      "category": "Food",
+      "amount": "520"
     }
   ]
 }

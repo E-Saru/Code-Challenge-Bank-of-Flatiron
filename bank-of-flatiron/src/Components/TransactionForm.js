@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function TransactionForm({ onAddTransaction }) {
+function TransactionForm({ onAddTransaction}) {
   const [transactionData, setTransactionData] = useState({
     date: "",
     description: "",
@@ -23,12 +23,12 @@ function TransactionForm({ onAddTransaction }) {
       category: "",
       amount: "",
     });
-  }
+  };
 
   return (
-    <div>
+    <div className="my-5">
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className="px-2">
         Date:{" "}
         <input
           type="date"
@@ -37,34 +37,40 @@ function TransactionForm({ onAddTransaction }) {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="px-2">
         Description:{" "}
         <input
           type="text"
           name="description"
           value={transactionData.description}
           onChange={handleChange}
+          placeholder="Enter Description"
+          required
         />
       </label>
-      <label>
+      <label className="px-2">
         Category:{" "}
         <input
           type="text"
           name="category"
           value={transactionData.category}
           onChange={handleChange}
+          placeholder="Enter Category"
+          required
         />
       </label>
-      <label>
+      <label className="px-2">
         Amount{" "}
         <input
           type="number"
           name="amount"
           value={transactionData.amount}
           onChange={handleChange}
+          placeholder="Enter amount"
+          required
         />
-      </label>
-      <button type="submit">Add New Transaction</button>
+      </label> <br/>
+      <button type="submit" className="mt-3 fs-6 badge text-bg-info">Add Transaction</button>
     </form>
     </div>
   );
