@@ -111,34 +111,6 @@
       "description": "Madaraka",
       "category": "Transportation",
       "amount": "1500"
-    },
-    {
-      "id": "55f9",
-      "date": "2024-01-30",
-      "description": "Matatu",
-      "category": "Transportation",
-      "amount": "300"
-    },
-    {
-      "id": "b43f",
-      "date": "",
-      "description": "Saltburn",
-      "category": "Food",
-      "amount": "780"
-    },
-    {
-      "id": "af98",
-      "date": "",
-      "description": "Madaraka",
-      "category": "Food",
-      "amount": "7"
-    },
-    {
-      "id": "c69e",
-      "date": "",
-      "description": "Saltburn",
-      "category": "Transportation",
-      "amount": "452"
     }
   ]
 }

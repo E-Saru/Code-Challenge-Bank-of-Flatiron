@@ -12,7 +12,6 @@ const App = () => {
   const [sortType, setSortType] = useState(null);
   const [displayAddForm, setDisplayAddForm] = useState(false);
 
-  // Fetch transactions data from the local JSON DB server
   useEffect(() => 
   {
       fetchTransaction();
@@ -24,8 +23,6 @@ const App = () => {
            const response = await fetch('http://localhost:8001/transactions');
            const data = await response.json()
            setTransactions(data);
-          //  console.log(data)
-          //  console.log(transactions)
         } catch(error) {
             console.log("Error fetching transaction " , error);
         }
@@ -58,6 +55,7 @@ const App = () => {
       }catch(error) {
         console.error("error adding transaction " , error)
       }
+      alert("Succesfully added!");
   }
 
   const handleDelete = async (id) => {
@@ -81,7 +79,7 @@ const App = () => {
           setSortType(null);
     } else {
      setSortType(type);
-     // making a copy of the transactions array to be used for sorting purposes as per the type 
+     // making a copy of the transactions array to be used for sorting  
      const sortedTransactions = [...transactions]
  
      if(type === 'category'){
@@ -99,11 +97,10 @@ const App = () => {
      <div className="App">
        <h2 className='text-bg-info'>Bank Of FlatIron</h2>
         <FilterTransactions onSearch={handleSearch} />
-        
-         <button  style={{margin: 10}} className='btn btn-info' onClick={() => setDisplayAddForm(!displayAddForm)}>Add New Transaction</button>
-        {displayAddForm ? <TransactionForm onAddTransaction={addTransaction} displayForm={setDisplayAddForm}/>: null}
+       <button  style={{margin: 10}} className='btn btn-info' onClick={() => setDisplayAddForm(!displayAddForm)}>Add New Transaction</button>
+        {displayAddForm ? <TransactionForm onAddTransaction={addTransaction} displayForm={setDisplayAddForm} />: null}
         <SortBar handleSort={handleSort} />
-        <TransactionTable transactions={filteredTransactions} onDelete={handleDelete}  />
+        <TransactionTable transactions={filteredTransactions} onDelete={handleDelete} />
      </div>
      </div>
    );
